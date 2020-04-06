@@ -1,27 +1,30 @@
 package model
 
-class Dealer(deck: Deck) : PlayerBase(deck) {
+class Dealer() : PlayerBase() {
 
 
-    fun draw():Int {
+    fun canDraw(deck: Deck): Boolean {
         val point = this.point
         if (point < 17) {
-            drawCard()
-            return 0
+            drawCard(deck)
+            return true
         }
-        if( point > 17){
-            return point
-        }
+        return false
 
-        return 99
+    }
+//    fun init(deck: Deck): List<Card> {
+//        return drawCard(deck)
+//    }
+
+    fun draw(deck: Deck): List<Card> {
+        return drawCard(deck)
     }
 
-
 }
-
-fun main(){
-    val deck = Deck()
-    val d = Dealer(deck)
-    println(d.draw())
-    println(d.point)
-}
+//
+//fun main() {
+//    val deck = Deck()
+//    val d = Dealer()
+//    println(d.draw(deck))
+//    println(d.point)
+//}

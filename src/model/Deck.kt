@@ -1,12 +1,13 @@
 package model
 
-import java.util.Random
+// import java.util.Random
+import kotlin.random.Random
 
 class Deck {
     //    val list : String
     companion object {
         const val SPADE: String = "SPADE"
-        const val HART: String = "HART"
+        const val HEART: String = "HEART"
         const val DIAMOND: String = "DIAMOND"
         const val CLUB: String = "CLUB"
     }
@@ -30,19 +31,19 @@ class Deck {
         Card(SPADE, 11),
         Card(SPADE, 12),
         Card(SPADE, 13),
-        Card(HART, 1),
-        Card(HART, 2),
-        Card(HART, 3),
-        Card(HART, 4),
-        Card(HART, 5),
-        Card(HART, 6),
-        Card(HART, 7),
-        Card(HART, 8),
-        Card(HART, 9),
-        Card(HART, 10),
-        Card(HART, 11),
-        Card(HART, 12),
-        Card(HART, 13),
+        Card(HEART, 1),
+        Card(HEART, 2),
+        Card(HEART, 3),
+        Card(HEART, 4),
+        Card(HEART, 5),
+        Card(HEART, 6),
+        Card(HEART, 7),
+        Card(HEART, 8),
+        Card(HEART, 9),
+        Card(HEART, 10),
+        Card(HEART, 11),
+        Card(HEART, 12),
+        Card(HEART, 13),
         Card(DIAMOND, 1),
         Card(DIAMOND, 2),
         Card(DIAMOND, 3),
@@ -73,7 +74,8 @@ class Deck {
 
     fun shuffle() {
         var deck = this.list
-        deck = deck.shuffled(Random(0))
+//        deck = deck.shuffled(Random(0))
+        deck = deck.shuffled()
         this.list = deck
     }
 
@@ -81,26 +83,26 @@ class Deck {
 //    fun draw(): Card {
         var deck = this.list
         val card = deck.take(1)
-        deck.drop(1)
+        deck = deck.drop(1)
         this.list = deck
         return card
     }
 }
 
 
-fun main(args: Array<String>) {
-
-    val foo = Deck()
-    var f = foo.list
-//    var p = foo.point
-    println(f)
-    foo.shuffle()
-    println(foo.list[0])
-    val p = foo.draw()
-    println(p)
+//fun main(args: Array<String>) {
+//
+//    val foo = Deck()
+//    var f = foo.list
+////    var p = foo.point
+//    println(f)
+//    foo.shuffle()
+//    println(foo.list[0])
+//    val p = foo.draw()
+//    println(p)
 
 //    println(f.list[0])
 //    println(p)
 
-}
+//}
 

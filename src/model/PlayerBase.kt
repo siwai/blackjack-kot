@@ -7,12 +7,11 @@ open class PlayerBase {
     //    var hand: List<Card>()
     var point: Int = 0
     var isBurst: Boolean = false
-    var deck: Deck
 
     //    var deck: Any
-    constructor(deck: Deck) {
-        this.deck = deck
-    }
+//    constructor(deck: Deck) {
+//        this.deck = deck
+//    }
 //    var Deck:model = Deck()
 
 //    constructor(Deck: list, number: Int) {
@@ -26,8 +25,8 @@ open class PlayerBase {
 
     //    inline fun <reified T> drawCard (deck: Deck) {
 //    fun drawCard (deck: Deck) {
-    fun drawCard(): List<Card> {
-        var deck = this.deck
+    fun drawCard(deck: Deck): List<Card> {
+//        var deck = this.deck
         val card = deck.draw()
         addCard(card)
         return card
@@ -42,7 +41,7 @@ open class PlayerBase {
 //        myHand.add(card)
 //        this.hand = myHand
         // こちらでよい？
-        println(hand)
+//        println(hand)
         hand.add(card[0])
         point += card[0].point
         isBurst()
@@ -64,13 +63,13 @@ open class PlayerBase {
 }
 
 
-fun main(args: Array<String>) {
-    val deck = Deck()
-    deck.shuffle()
-    val foo = PlayerBase(deck)
-    foo.drawCard()
-    println(foo.hand)
-    val d = foo.hand
-    println("end")
-
-}
+//fun main(args: Array<String>) {
+//    val deck = Deck()
+//    deck.shuffle()
+//    val foo = PlayerBase()
+//    foo.drawCard(deck)
+//    println(foo.hand)
+//    val d = foo.hand
+//    println("end")
+//
+//}
